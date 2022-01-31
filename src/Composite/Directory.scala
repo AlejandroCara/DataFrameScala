@@ -1,0 +1,5 @@
+package Composite
+
+class Directory {
+
+}
