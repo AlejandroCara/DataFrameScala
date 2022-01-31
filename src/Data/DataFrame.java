@@ -3,8 +3,8 @@ package Data;
 import Comparators.CustomComparator;
 import Factories.ReaderFactory;
 import Predicates.CustomPredicate;
-import Visitor.Visitor;
 import Composite.AComponent;
+import Visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,10 +56,11 @@ public class DataFrame implements AComponent {
         this.values.add(inValue);
     }
 
-    public String at(int row, String col){
-        //List srow = this.values.get(row);
-        //int fd = this.columns.indexOf(col);
-        return this.values.get(row).get(this.columns.indexOf(col));
+    //Return the value at the label and row specified
+    public List<String> at(int row, String col){
+        List<String> at = new ArrayList<String>();
+        at.add(this.values.get(row).get(this.columns.indexOf(col)).trim());
+        return at;
     }
 
     public String iat(int row, int col) {
