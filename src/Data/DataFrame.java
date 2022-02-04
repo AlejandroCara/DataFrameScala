@@ -102,4 +102,12 @@ public class DataFrame implements AComponent {
     public void accept(Visitor v){
         v.visit(this);
     }
+
+    public List<String> getColumntAsList(String label){
+        List<String> result = new ArrayList<String>();
+        for(int i = 0; i < values.size(); i++){
+            result.add(values.get(i).get(columns.indexOf(label)).trim());
+        }
+        return result;
+    }
 }
